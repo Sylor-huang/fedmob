@@ -1,0 +1,24 @@
+.icon-fullscreen:before {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+	content: "\f0b2";
+}
+
+.simditor-fullscreen {
+  overflow: hidden;
+
+  .simditor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+
+    .simditor-body {
+      overflow: auto;
+    }
+  }
+}
