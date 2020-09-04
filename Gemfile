@@ -7,7 +7,12 @@ gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
+gem 'jquery-rails', '~> 4.4'
 gem 'sass-rails', '~> 6.0'
+#前端页面
+gem 'bootstrap', '~> 4.5', '>= 4.5.2'
+gem 'bootstrap-sass', '~> 3.4.1'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -30,8 +35,7 @@ gem 'turbolinks', '~> 5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-#前端页面
-gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.10', '>= 4.10.1'
 #devise 认证
