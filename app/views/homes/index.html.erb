@@ -2,9 +2,9 @@
 <div class="pt-3 pb-3">
   <div class="container common_shadow bg-white border-radius-4 mb-4">
     <div class="p-4">
-      <div class="grid-item-left mb-4">
-        <span class="fs20">文章增量</span>
+      <div class="grid-item mb-4">
         <%= render partial: "homes/select_chart", locals: {chart: "article"} %>
+        <span class="fs20 text-right">文章增量</span>
       </div>
       <div id="articles-charts">
         <%= render partial: "homes/chart_item" %>
@@ -13,9 +13,9 @@
   </div>
   <div class="container common_shadow bg-white border-radius-4 mb-4">
     <div class="p-4">
-      <div class="grid-item-left mb-4">
-        <span class="fs20">用户增量</span>
+      <div class="grid-item mb-4">
         <%= render partial: "homes/select_chart", locals: {chart: "user"} %>
+        <span class="fs20 text-right">用户增量</span>
       </div>
       <div id="users-charts">
         <%= render partial: "homes/user_chart" %>
