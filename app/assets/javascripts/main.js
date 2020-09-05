@@ -11,3 +11,65 @@
 //         loadingMask.parentNode.removeChild(loadingMask);
 //     }
 // }
+
+$(document).on("turbolinks:load", function () {
+  'use strict';
+    $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+    });
+  // 编辑器的使用
+  $(function () {
+    let lan_simditor = "zh-CN";
+    Simditor.locale = lan_simditor; //设置中文
+    let input_simditor = $(".simditor-input");
+    if (input_simditor.length > 0) {
+      toolbar = [
+        "title",
+        "bold",
+        "italic",
+        "underline",
+        "strikethrough",
+        "color",
+        "|",
+        "ol",
+        "ul",
+        "blockquote",
+        "code",
+        "table",
+        "|",
+        "link",
+        "image",
+        "hr",
+        "|",
+        "alignment",
+        "fullscreen",
+      ];
+      input_simditor.each(function () {
+        let editor = new Simditor({
+          textarea: $(this),
+          placeholder: "",
+          pasteImage: true,
+          toolbar: toolbar,
+          fileKey: "file",
+          allowedAttributes: {
+            img: ["src", "alt", "width", "height", "data-non-image"],
+          },
+          upload: { url: "/documents" },
+        });
+      });
+    }
+  });
+
+  //图片点击放大功能
+  $(function () {
+    let imgEls = $(".editor-content img");
+    imgEls.each(function () {
+      $(this).wrap(
+        "<a href=" +
+          $(this).attr("src") +
+          " class='zoom-image text-center' data-action='zoom'></a>"
+      );
+    });
+    $("a.zoom-image").fluidbox();
+  });
+});

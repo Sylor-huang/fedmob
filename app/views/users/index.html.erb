@@ -1,0 +1,11 @@
+<% provide(:title, "用户列表") %>
+<div class="pt-3 pb-3">
+  <div class="container common_shadow bg-white text-center border-radius-4">
+    <div class="maxW320 pt-3">
+      <%= render partial: "layouts/search", locals: {url: users_path} %>
+    </div>
+    <div class="table-responsive" id="users-all-content">
+      <%= render partial: "users/lists" %>
+    </div>
+  </div>
+</div>

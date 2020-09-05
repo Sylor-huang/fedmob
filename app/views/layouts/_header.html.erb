@@ -13,25 +13,40 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+       <i class='fa fa-bars text-gray'></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item <%= @menu == 1 ? 'active' : '' %>">
             <a class="nav-link" href="/">首页</a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item <%= @menu == 2 ? 'active' : '' %>">
             <a class="nav-link" href="/articles">文章列表</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item <%= @menu == 3 ? 'active' : '' %>">
             <a class="nav-link" href="/users">用户列表</a>
           </li>
         </ul>
       </div>
-      <a class="btn btn-primary mr-3" href="/users/sign_up" role="button"
-        >注册</a
-      >
-      <a class="btn btn-light" href="/users/sign_in" role="button">登录</a>
+      <div>
+        <% if current_user.present? %>
+          <div class="dropdown">
+            <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= user_picture(current_user, class: "avatar-32") %>
+              <span class="ml-2"><%= current_user.name %></span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <%= link_to "<i class='fa fa-pencil mr2 fa-fw'></i>编辑".html_safe, edit_user_path(current_user), class: "dropdown-item text-gray mb-2"%>
+            <%= link_to "<i class='fa fa-trash mr2 fa-fw'></i>退出".html_safe, destroy_user_session_path, method: :delete, class: "dropdown-item text-gray"%>
+            </div>
+          </div>  
+        <% else %>
+          <a class="btn btn-primary mr-3" href="/users/sign_up" role="button"
+          >注册</a>
+          <a class="btn btn-light" href="/users/sign_in" role="button">登录</a>
+        <% end %>
+      </div>
+
     </nav>
   </div>
 </div>

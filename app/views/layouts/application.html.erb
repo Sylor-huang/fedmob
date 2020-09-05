@@ -8,13 +8,18 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="turbolinks-cache-control" content="no-cache">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': true %>
     <link rel="shortcut icon" href="<%= image_path("favicon.ico") %>" />
   </head>
   <body>
     <%= render :partial => "layouts/header" %>
+    <%= render partial: "devise/shared/success_messages" %>
     <div class="content-bg">
+    <div id="error_messages"></div>
+    <div id="spinner" class="hide">
+      <%= image_tag("loading.svg") %>
+    </div>
       <%= yield %>
     </div>
     <%= render :partial => "layouts/footer" %>

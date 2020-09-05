@@ -1,0 +1,29 @@
+<table class="table table-borderless table-hover no_wrap">
+  <thead>
+    <tr>
+      <th scope="row">ID</th>
+      <th scope="col">名称</th>
+      <th scope="col">邮箱</th>
+      <th scope="col">文章数</th>
+      <th scope="col">浏览数</th>
+      <th scope="col">操作</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% if @users_count > 0%>
+    <% @users.each_with_index do |user, index| %>
+      <%= render partial: "users/list_item", locals: {user: user, no: index} %>
+    <% end %>
+  <% else %>
+    <tr>
+    <td  colspan="100">
+    <%= render partial: "layouts/no_data" %>
+    </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<div class="paginationBox p-4">
+  <%= paginate @users,left:2,right:1,window: 1, remote: true %>
+</div>

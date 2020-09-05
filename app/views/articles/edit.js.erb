@@ -1,0 +1,7 @@
+$('#error_messages').html("")
+<% if @status == 1 %>
+ <% flash[:notice] = "更新成功" %>
+  Turbolinks.visit('<%= article_path(@article) %>');
+<% else %>
+  $('#error_messages').prepend('<%= j render("devise/shared/error_messages", resource: @article) %>');
+<% end %>

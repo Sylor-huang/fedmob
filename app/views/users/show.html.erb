@@ -1,0 +1,32 @@
+<% provide(:title, @user.name) %>
+<div class="pt-3 pb-3">
+  <div class="container common_shadow bg-white border-radius-4">
+    <div class="p-4 grid-item">
+      <%= link_to user_path(@user) do %>
+        <%= user_picture(@user, class: "avatar-48") %>
+      <% end %>
+      <div class="ml-3">
+        <div class="mb-2">
+          <%= link_to @user.name, user_path(@user), class: "fs16" %>
+          <span class="pull-right">
+            <%= link_to "<i class='fa fa-pencil mr2 fa-fw'></i>编辑".html_safe, edit_user_path(@user), class: "text-gray mr-3 fs12" %>
+            <%= link_to "<i class='fa fa-trash mr2 fa-fw'></i>删除".html_safe, user_path(@user), data: { confirm: "确认删除用户吗？" }, method: :delete, remote: true, class: "text-danger fs12" %>
+          </span>
+        </div>
+        <div>
+          <span class="text-gray fs12 mr-3">浏览: <%= @user.visitor_no %></span>
+          <span class="text-gray fs12 mr-3">文章数: <%= @user.articles_count %></span>
+          <span class="text-gray fs12">注册时间: <%= rename_time(@user.created_at) %></span>
+        </div>
+      </div>
+    </div>
+    <div class="p-4">
+    文章列表
+    </div>
+    <div>
+    <div class="table-responsive" id="user-articles-all-content">
+      <%= render partial: "articles/lists" %>
+    </div>
+    </div>
+  </div>
+</div>

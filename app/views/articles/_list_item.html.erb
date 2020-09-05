@@ -1,0 +1,20 @@
+<% user = article.user %>
+<tr>
+  <th scope="row"><%= table_index(@page, no) %></th>
+  <td>
+    <%= link_to article.title, article_path(article)%>
+  </td>
+  <td>
+    <%= link_to user_path(user) do %>
+      <%= user_picture(user, class: "avatar-24") %>
+      <span class="ml-2"><%= user.name %></span>
+    <% end %>
+  </td>
+  <td><%= article.visitor_no %></td>
+  <td><%= rename_time(article.created_at) %></td>
+  <td>
+  <%= link_to "<i class='fa fa-pencil mr2 fa-fw'></i>编辑".html_safe, edit_article_path(article), class: "text-gray mr-3 fs12" %>
+  <%= link_to "<i class='fa fa-trash mr2 fa-fw'></i>删除".html_safe, article_path(article), data: { confirm: "确认删除文章吗？" }, 
+          method: :delete, remote: true, class: "text-danger fs12" %>
+  </td>
+</tr>

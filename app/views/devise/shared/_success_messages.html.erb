@@ -1,0 +1,16 @@
+<% flash.each do |type, msg| %>
+  <div class="bg-gray">
+    <%= image_tag("icons/close.svg", class: "close-button")%>
+    <div class="alert text-center <%= type == 'notice' ? 'alert-success' : 'alert-danger' %>" role="alert">
+    <%= msg %>
+    </div>
+  </div>
+<% end %>
+
+<script>
+$(".close-button").each(function(){
+      $(this).on("click", function(){
+        $(this).parent("div").remove()
+      })
+    })
+</script>

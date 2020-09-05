@@ -1,1 +1,18 @@
-<div>ddd</div>
+<% provide(:title, "文章列表") %>
+<div class="pt-3 pb-3">
+  <div class="container common_shadow bg-white text-center border-radius-4">
+    <div class="grid-item pt-3">
+      <div class="maxW320">
+      <%= render partial: "layouts/search", locals: {url: articles_path} %>
+    </div>
+    <div class="text-right">
+      <button type="button" class="btn btn-primary">
+        <%= link_to "新增", new_article_path, class: "text-white" %>
+      </button>
+    </div>
+  </div>
+    <div class="table-responsive" id="articles-all-content">
+      <%= render partial: "articles/lists" %>
+    </div>
+  </div>
+</div>

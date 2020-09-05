@@ -1,0 +1,17 @@
+<div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-secondary btn-sm">
+  <%= link_to "年", root_path(type: chart, period: "year"), remote: true, class: "text-white" %>
+  </button>
+  <button type="button" class="btn btn-secondary btn-sm ">
+  <%= link_to "月", root_path(type: chart, period: "month"), remote: true, class: "text-white" %>
+  </button>
+  <button type="button" class="btn btn-secondary btn-sm">
+  <%= link_to "日", root_path(type: chart, period: "day"), remote: true, class: "text-white" %>
+  </button>
+  <button type="button" class="btn btn-secondary btn-sm">
+  <%= link_to "时", root_path(type: chart, period: "hour"), remote: true, class: "text-white" %>
+  </button>
+  <button type="button" class="btn btn-secondary btn-sm">
+  <%= link_to "分", root_path(type: chart, period: "minute"), remote: true, class: "text-white" %>
+  </button>
+</div>

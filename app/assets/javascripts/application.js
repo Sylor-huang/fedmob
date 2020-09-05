@@ -11,12 +11,27 @@
 // about supported directives.
 //
 //= require jquery3
-//= require rails-ujs
+// = require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require activestorage
+// = require module
+//= require hotkeys
+//= require uploader
 //= require simditor
 //= require simditor-fullscreen
 //= require social-share-button
 //= require social-share-button/wechat
+//= require chartkick
+//= require Chart.bundle
 //= require_tree .
+
+$(document).on("ajax:before ajaxStart page:fetch turbolinks:click", function(event) {
+  'use strict';
+  $("#spinner").removeClass("hide");
+});
+$(document).on("ajax:complete ajaxComplete page:change turbolinks:load", function(event) {
+  'use strict';
+  $("#spinner").addClass("hide");
+  $('pre code').each(function(i, e) {hljs.highlightBlock(e);});
+});

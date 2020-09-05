@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_04_140911) do
+ActiveRecord::Schema.define(version: 2020_09_05_095611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,11 +19,26 @@ ActiveRecord::Schema.define(version: 2020_09_04_140911) do
     t.string "title"
     t.text "content"
     t.integer "user_id"
-    t.integer "visitor_no"
+    t.integer "visitor_no", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["title"], name: "index_articles_on_title"
     t.index ["user_id"], name: "index_articles_on_user_id"
+  end
+
+  create_table "documents", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "file_name"
+    t.string "file_type"
+    t.integer "file_size"
+    t.string "md5hash"
+    t.integer "downloads_count", default: 0
+    t.integer "article_id"
+    t.string "document_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["article_id"], name: "index_documents_on_article_id"
+    t.index ["user_id"], name: "index_documents_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

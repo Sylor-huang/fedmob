@@ -1,0 +1,35 @@
+<% provide(:title, "首页") %>
+<div class="pt-3 pb-3">
+  <div class="container common_shadow bg-white border-radius-4 mb-4">
+    <div class="p-4">
+      <div class="grid-item-left mb-4">
+        <span class="fs20">文章增量</span>
+        <%= render partial: "homes/select_chart", locals: {chart: "article"} %>
+      </div>
+      <div id="articles-charts">
+        <%= render partial: "homes/chart_item" %>
+      </div>
+    </div>
+  </div>
+  <div class="container common_shadow bg-white border-radius-4 mb-4">
+    <div class="p-4">
+      <div class="grid-item-left mb-4">
+        <span class="fs20">用户增量</span>
+        <%= render partial: "homes/select_chart", locals: {chart: "user"} %>
+      </div>
+      <div id="users-charts">
+        <%= render partial: "homes/user_chart" %>
+      </div>
+    </div>
+  </div>
+  <div class="container common_shadow bg-white border-radius-4">
+    <div class="p-4">
+      <div class="grid-item-left mb-4">
+        <span class="fs20">用户文章</span>
+      </div>
+      <div id="users-articles-charts">
+      <%= bar_chart @user_article_counts %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<% provide(:title, "编辑") %>
+<div class="pt-3 pb-3">
+<div class="container common_shadow bg-white text-center border-radius-4">
+  <div class="row pt-5 pb-5">
+    <div class="col-md-6 offset-md-3">
+      <h2 class="mb-5">编辑资料</h2>
+      <%= form_for(@user, as: @user, url: user_path(@user),method: :put, remote: true) do |f| %>
+        <div class="input-group mb-4">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon"><%= image_tag("icons/email.svg") %></span>
+          </div>
+          <%= f.email_field :email, autofocus: true, placeholder: "请输入邮箱", class: "form-control", autocomplete: "email", 'aria-describedby': "basic-addon" %>
+        </div>
+        <div class="input-group mb-4">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><%= image_tag("icons/person.svg") %></span>
+          </div>
+          <%= f.text_field :name,  placeholder: "请输入用户名称", class: "form-control",autocomplete: "name", 'aria-describedby': "basic-addon1" %>
+        </div>
+        <div class="input-group mb-4">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon2"><%= image_tag("icons/shield_lock.svg") %></span>
+          </div>
+          <%= f.password_field :password,  placeholder: "请输入密码(不少于6位)", class: "form-control", 'aria-describedby': "basic-addon2" %>
+        </div>
+        <div class="form-group">
+        <%= f.submit "提交", class: "btn btn-primary mr-5" %>
+        <button type="button" class="btn btn-light">
+          <%= link_to "返回", user_path(@user),class: "text-gray" %>
+        </button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
+

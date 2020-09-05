@@ -4,7 +4,7 @@ class CreateArticles < ActiveRecord::Migration[6.0]
       t.string :title
       t.text :content 
       t.integer :user_id 
-      t.integer :visitor_no
+      t.integer :visitor_no, default: 0
       t.timestamps
     end
     add_index :articles , :title

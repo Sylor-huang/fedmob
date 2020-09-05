@@ -1,0 +1,16 @@
+<tr>
+  <th scope="row"><%= table_index(@page, no) %></th>
+  <td>
+    <%= link_to user_path(user) do %>
+      <%= user_picture(user, class: "avatar-24") %>
+      <span class="ml-2"><%= user.name %></span>
+    <% end %>
+  </td>
+  <td><%= user.email %></td>
+  <td><%= user.articles_count %></td>
+  <td><%= user.visitor_no %></td>
+  <td>
+  <%= link_to "<i class='fa fa-pencil mr2 fa-fw'></i>编辑".html_safe, edit_user_path(user), class: "text-gray mr-3 fs12" %>
+  <%= link_to "<i class='fa fa-trash mr2 fa-fw'></i>删除".html_safe, user_path(user), data: { confirm: "确认删除用户吗？" }, method: :delete, remote: true, class: "text-danger fs12" %>
+  </td>
+</tr>

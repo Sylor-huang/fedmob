@@ -1,0 +1,7 @@
+$('#error_messages').html("")
+<% if @status == 1 %>
+ <% flash[:notice] = "删除成功" %>
+  Turbolinks.visit('<%= articles_path %>');
+<% else %>
+  $('#error_messages').prepend('<%= j render("devise/shared/error_messages", resource: @user) %>');
+<% end %>

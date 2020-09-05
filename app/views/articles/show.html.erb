@@ -1,0 +1,28 @@
+<% provide(:title, @article.title) %>
+<div class="pt-3 pb-3">
+  <div class="container common_shadow bg-white border-radius-4">
+    <div class="p-4">
+      <div class="text-center">
+        <p class="fs20"><%= @article.title %></p>
+        <div class="mb-4">
+          <%= link_to user_path(@article.user),class: "fs12 mr-3" do %>
+            <%= user_picture(@article.user, class: "avatar-16") %>
+            <span class="ml-1 ver-middle"><%= @article.user.name %></span>
+          <% end %>
+          <span class="fs12 mr-3 text-gray">浏览: <%= @article.visitor_no %></span>
+          <span class="fs12 mr-3 text-gray">发布时间: <%= rename_time(@article.created_at) %></span>
+          <span class="pull-right">
+            <%= link_to "<i class='fa fa-pencil mr2 fa-fw'></i>".html_safe, edit_article_path(@article), class: "text-gray mr-3 fs12" %>
+            <%= link_to "<i class='fa fa-trash mr2 fa-fw'></i>".html_safe, article_path(@article), data: { confirm: "确认删除文章吗？" }, method: :delete, remote: true, class: "text-danger fs12" %>
+          </span>
+        </div>
+      </div>
+       <div class="editor-content">
+          <%= @article.content.html_safe %>
+        </div>
+    </div>
+    <div class="share-button p-4">
+      <%= render :partial => "layouts/share",locals: {post: @article}%>
+    </div>
+  </div>
+</div>
