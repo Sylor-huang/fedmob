@@ -1,0 +1,28 @@
+/* line 1, app/assets/stylesheets/simditor-fullscreen.scss */
+.icon-fullscreen:before {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  content: "\f0b2";
+}
+
+/* line 10, app/assets/stylesheets/simditor-fullscreen.scss */
+.simditor-fullscreen {
+  overflow: hidden;
+}
+
+/* line 13, app/assets/stylesheets/simditor-fullscreen.scss */
+.simditor-fullscreen .simditor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+}
+
+/* line 20, app/assets/stylesheets/simditor-fullscreen.scss */
+.simditor-fullscreen .simditor .simditor-body {
+  overflow: auto;
+}

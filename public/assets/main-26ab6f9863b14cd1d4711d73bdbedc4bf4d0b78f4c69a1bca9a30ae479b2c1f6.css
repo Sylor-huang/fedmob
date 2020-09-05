@@ -1,0 +1,235 @@
+@charset "UTF-8";
+/* line 9, app/assets/stylesheets/main.scss */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* 分页的css */
+}
+
+/* line 13, app/assets/stylesheets/main.scss */
+body a:hover {
+  text-decoration: none;
+}
+
+/* line 16, app/assets/stylesheets/main.scss */
+body .fs12 {
+  font-size: 12px;
+}
+
+/* line 19, app/assets/stylesheets/main.scss */
+body .fs20 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* line 23, app/assets/stylesheets/main.scss */
+body .fs16 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* line 27, app/assets/stylesheets/main.scss */
+body .border-radius-4 {
+  border-radius: 0.25rem;
+}
+
+/* line 30, app/assets/stylesheets/main.scss */
+body .header-bg {
+  box-shadow: 0px 12px 15px rgba(140, 152, 164, 0.1);
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+/* line 34, app/assets/stylesheets/main.scss */
+body .content-bg {
+  background-color: #f7faff;
+  flex: 1;
+}
+
+/* line 38, app/assets/stylesheets/main.scss */
+body .text-white {
+  color: #fff;
+}
+
+/* line 41, app/assets/stylesheets/main.scss */
+body .common_shadow {
+  box-shadow: 0px 12px 15px rgba(140, 152, 164, 0.1);
+}
+
+/* line 44, app/assets/stylesheets/main.scss */
+body .bg-gray {
+  background-color: #f7faff;
+}
+
+/* line 47, app/assets/stylesheets/main.scss */
+body .bg-white {
+  background-color: #fff !important;
+}
+
+/* line 50, app/assets/stylesheets/main.scss */
+body .text-gray {
+  color: #677788;
+}
+
+/* line 53, app/assets/stylesheets/main.scss */
+body .avatar-32 {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.25rem;
+}
+
+/* line 58, app/assets/stylesheets/main.scss */
+body .avatar-48 {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.25rem;
+}
+
+/* line 63, app/assets/stylesheets/main.scss */
+body .avatar-16 {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.25rem;
+}
+
+/* line 68, app/assets/stylesheets/main.scss */
+body .avatar-24 {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.25rem;
+}
+
+/* line 74, app/assets/stylesheets/main.scss */
+body .navbar-nav .nav-link {
+  color: #677788;
+  margin-right: 1rem;
+}
+
+/* line 78, app/assets/stylesheets/main.scss */
+body .navbar-nav .nav-link:hover {
+  color: #377dff;
+}
+
+/* line 82, app/assets/stylesheets/main.scss */
+body .navbar-nav .nav-item.active .nav-link {
+  color: #377dff;
+}
+
+/* line 87, app/assets/stylesheets/main.scss */
+body ul {
+  list-style: none;
+}
+
+/* line 90, app/assets/stylesheets/main.scss */
+body .error_explanation {
+  z-index: 999;
+  position: fixed;
+  top: 70px;
+  right: 5px;
+}
+
+/* line 96, app/assets/stylesheets/main.scss */
+body .close-button {
+  position: absolute;
+  z-index: 100;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* line 104, app/assets/stylesheets/main.scss */
+body .paginationBox a span.page-numbers {
+  margin-right: 0.25rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  display: inline-block;
+  padding: 5px 10px;
+  color: #666;
+  font-size: 13px;
+}
+
+/* line 114, app/assets/stylesheets/main.scss */
+body .paginationBox span.page-numbers:hover,
+body .paginationBox span.page-numbers.current {
+  color: #fff;
+  background-color: #377dff;
+  border-color: transparent;
+}
+
+/* line 121, app/assets/stylesheets/main.scss */
+body .no_wrap {
+  white-space: nowrap !important;
+}
+
+/* line 124, app/assets/stylesheets/main.scss */
+body .grid-item {
+  display: grid;
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+}
+
+/* line 128, app/assets/stylesheets/main.scss */
+body .grid-item-left {
+  display: grid;
+  grid-template-columns: 1fr -webkit-max-content;
+  grid-template-columns: 1fr max-content;
+}
+
+/* line 132, app/assets/stylesheets/main.scss */
+body .maxW320 {
+  max-width: 20rem;
+}
+
+/* line 135, app/assets/stylesheets/main.scss */
+body .max-title {
+  max-width: 12.5rem;
+  white-space: initial;
+  word-wrap: break-word;
+}
+
+/* line 140, app/assets/stylesheets/main.scss */
+body .ver-middle {
+  vertical-align: middle;
+}
+
+/* line 143, app/assets/stylesheets/main.scss */
+body .editor-content {
+  word-break: break-all;
+}
+
+/* line 145, app/assets/stylesheets/main.scss */
+body .editor-content img {
+  cursor: zoom-in;
+  max-width: 100%;
+  width: auto;
+  max-height: 500px;
+}
+
+/* line 151, app/assets/stylesheets/main.scss */
+body .editor-content p {
+  font-size: 16px;
+}
+
+/* line 156, app/assets/stylesheets/main.scss */
+body .share-button .social-share-button a {
+  background-size: 22px 22px;
+  height: 22px;
+  width: 22px;
+  margin: 0 3px;
+}
+
+/* line 163, app/assets/stylesheets/main.scss */
+body #spinner {
+  position: fixed;
+  z-index: 9999;
+  top: 40%;
+  left: 40%;
+  padding: 0 20px;
+  min-width: 100px;
+  border-radius: 8px;
+}
+
+/* line 172, app/assets/stylesheets/main.scss */
+body .hide {
+  display: none;
+}
