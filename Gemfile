@@ -3,7 +3,7 @@ source 'https://gems.ruby-china.com'
 ruby '2.7.0'
 gem 'rails', '~> 6.0', '>= 6.0.2.2'
 # Use postgresql as the database for Active Record
-gem 'pg', '>= 0.18', '< 2.0'
+gem 'pg', '~> 1.5', '>= 1.5.3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
